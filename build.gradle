@@ -1,0 +1,56 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.16.RELEASE'
+
+	}
+	repositories {
+
+		maven {
+			url="http://maven.aliyun.com/nexus/content/groups/public/"
+		}
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+	//自定义 Thymeleaf 和 Thymeleaf Layout Dialect 的版本
+	ext['thymeleaf.version'] = '3.0.3.RELEASE'
+	ext['thymeleaf-layout-dialect.version'] = '2.2.0'
+
+
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.first.blog'
+version = '1.0.0'
+sourceCompatibility = 1.8
+
+repositories {
+
+	maven {
+		url="http://maven.aliyun.com/nexus/content/groups/public/"
+	}
+		mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	
+	//添加elasticsearch依赖
+	compile('org.springframework.boot:spring-boot-starter-data-elasticsearch')
+	
+	//添加	JNA的依赖
+	compile('net.java.dev.jna:jna:4.3.0')
+	
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	//添加Thymeleaf的依赖
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	
+	
+
+}
