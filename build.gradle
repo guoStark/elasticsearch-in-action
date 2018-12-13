@@ -4,7 +4,6 @@ buildscript {
 
 	}
 	repositories {
-
 		maven {
 			url="http://maven.aliyun.com/nexus/content/groups/public/"
 		}
@@ -45,7 +44,6 @@ dependencies {
 	
 	//添加	JNA的依赖
 	compile('net.java.dev.jna:jna:4.3.0')
-	
 	
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	//添加Thymeleaf的依赖
